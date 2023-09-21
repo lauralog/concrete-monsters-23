@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../../assets/styles/styles.sass"
+import Header from "../components/Header.astro";
+import HeroSection from "../components/HeroSection.astro";
+import NewSection from "../components/Section.astro";
+import SectionCards from "../components/SectionCards.astro";
+---
+
+<Layout title="Clon Tesla landing page">
+	<Header />
+
+	<main class="main">
+
+		<!-- <div class="section_container" id="about">
+			<HeroSection
+				color='black'
+				title='Concrete monsters'
+				subtitle='Shoutout to the New Brutalism architecture, ethics and aesthetics.'
+			>	
+				<div slot="section_footer" class="section_footer">
+					<a href="#">Yo sólo soy un botón que no hace nada</a>
+				</div>
+				<div slot="background">
+				</div>
+			</HeroSection> 
+		</div> -->
+	</main>
+
+</Layout>
+
+<style lang="sass">
+	.main
+		@apply relative w-full h-screen overflow-auto scrollbar-hide
+		// con overflow-auto scrolleamos el contenedor
+		@apply snap-y snap-mandatory
+		.section_container
+			@apply snap-center w-full h-[100vh] pt-[56px]
+
+
+
+</style>

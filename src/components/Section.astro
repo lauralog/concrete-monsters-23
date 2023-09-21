@@ -1,0 +1,50 @@
+---
+const { title, subtitle } = Astro.props
+---
+
+<section class="section">
+
+
+    <div class="section_bg_container">
+        <slot name="media"/>
+        <!-- <video autoplay muted loop src="/video.webm"></video> -->
+    </div>
+
+    <div class="section_content">
+        <header class="section_header"> 
+            <h2 class="title">{title}</h2>
+            <p>{subtitle}</p>
+        </header>
+
+        <slot name="links" class="links"/>
+    </div>
+</section>
+
+
+<style lang="sass">
+.section
+    @apply flex flex-col gap-8 h-screen w-full overflow-hidden justify-start
+    @apply font-sans text-center
+    .section_content
+        @apply px-20 h-1/2
+        @apply flex text-start justify-between
+        .section_header
+            @apply flex flex-col text-start justify-start h-fit
+
+            .title
+                @apply text-3xl mb-2 font-bold
+            p
+                @apply max-w-[45ch] text-sm
+        // .links
+        //     @apply flex
+
+    .section_bg_container
+        @apply h-full w-full z-10 overflow-hidden flex justify-end 
+        // max-h-[65vh]
+        // img
+        //     @apply object-contain h-full w-full
+
+</style>
+
+
+

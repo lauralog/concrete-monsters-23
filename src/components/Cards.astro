@@ -1,0 +1,52 @@
+---
+const { title, chapter, book, img, bgText } = Astro.props
+---
+
+<article class="book_card">
+    <div class="card_front">
+        <h3 class="card_title">{ title }</h3>
+        <p class="card_chapter">{ chapter }</p>
+        <p class="card_footer">{ book }</p>
+    </div>
+
+    <div class="card_bg">
+        <p>{ bgText }</p>
+        <img src={ img } alt="">
+    </div>
+</article>
+
+<style lang="sass">
+   
+    .book_card
+        @apply relative
+        @apply w-1/2 h-full bg-white border border-black
+        @apply flex flex-col justify-end 
+        .card_front
+            @apply absolute top-0 left-0 z-50 
+            @apply w-full h-full px-12 py-6 bg-gray-400
+            @apply flex flex-col justify-end capitalize
+            &:hover
+                @apply opacity-0
+                @apply transition-all duration-1000 ease-in-out
+
+            .card_title
+                @apply font-sans text-xl font-bold text-current
+
+            .card_chapter
+                @apply font-serif text-current
+
+            .card_footer
+                @apply text-end mt-4 text-current
+                @apply font-mono text-xs
+
+        .card_bg
+            @apply absolute top-0 z-10
+            @apply flex w-full h-full items-center justify-center overflow-hidden 
+            img
+                @apply absolute object-cover opacity-25      
+            p
+                @apply absolute z-10 font-bold text-lg
+                @apply max-w-[30ch] text-center
+        
+            
+</style>

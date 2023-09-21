@@ -1,0 +1,109 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../../assets/styles/styles.sass"
+import Header from "../components/Header.astro";
+import HeroSection from "../components/HeroSection.astro";
+import Section from "../components/Section.astro";
+import SectionCards from "../components/SectionCards.astro";
+---
+
+<Layout title="Clon Tesla landing page">
+	<Header />
+
+	<main class="main">
+
+		<div class="section_container" id="hero">
+			<HeroSection
+				color='black'
+				title='Concrete monsters'
+				subtitle='Shoutout to the New Brutalism architecture, ethics and aesthetics.'
+			>	
+				<div slot="section_footer" class="section_footer">
+					<a href="#">Yo sólo soy un botón que no hace nada</a>
+				</div>
+			</HeroSection> 
+		</div>
+
+		<div class="section_container" id="section01">
+			<SectionCards/>
+		</div>
+
+		<div class="section_container" id="video">
+			<Section
+				title = 'People live(d) here'
+				subtitle = '"People live(d) here" is a video extension about Book 3, chapter 1: Chronicle of a death foretold'
+			>	
+				<div slot="links" class="section_links">
+					<a href="https://youtu.be/QXbBui3YV3w">
+						Watch full video 
+					</a>
+				</div>
+				<div slot="media" class="section_bg_container">
+					<video autoplay muted loop src="/video-rhg.mp4"></video>
+				</div>
+			</Section> 
+		</div>
+
+		<div class="section_container" id="gallery">
+			<Section
+				title = 'Gallery'
+				subtitle = 'Scroll to see the pictures'
+			>	
+				<div slot="media" class="section_gallery_container">
+					<ul class="gallery">
+						<li>
+							<img src="/hero-pic.png" alt="">
+						</li>
+						<li>
+							<img src="/hero-pic.png" alt="">
+						</li>						<li>
+							<img src="/hover-img.png" alt="">
+						</li>						<li>
+							<img src="/hero-pic.png" alt="">
+						</li>						<li>
+							<img src="/hero-pic.png" alt="">
+						</li>						<li>
+							<img src="/hero-pic.png" alt="">
+						</li>						<li>
+							<img src="/hover-img.png" alt="">
+						</li>						<li>
+							<img src="/hero-pic.png" alt="">
+						</li>						<li>
+							<img src="/hero-pic.png" alt="">
+						</li>						<li>
+							<img src="/hero-pic.png" alt="">
+						</li>						<li>
+							<img src="/hero-pic.png" alt="">
+						</li>
+					</ul>
+				</div>
+			</Section> 
+		</div>
+
+	</main>
+
+</Layout>
+
+<style lang="sass">
+	.main
+		@apply relative w-full h-screen overflow-auto scrollbar-hide
+		// con overflow-auto scrolleamos el contenedor
+		@apply snap-y snap-mandatory
+		.section_container
+			@apply snap-center w-full h-screen pt-[56px]
+
+.section_bg_container
+	@apply h-full w-full z-10 overflow-hidden flex justify-end
+	img, video
+		@apply object-contain h-full
+
+.section_gallery_container
+	@apply my-auto w-full h-full
+	.gallery
+		@apply overflow-scroll overflow-x-scroll
+		@apply flex h-full	
+		li
+			img
+				@apply max-w-md h-auto
+
+</style>

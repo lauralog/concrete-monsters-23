@@ -1,0 +1,38 @@
+---
+const { title, subtitle } = Astro.props
+---
+
+<section class="hero_section">
+
+    <div class="section_bg_container">
+        <img src="/hero-pic.png" alt="">
+        
+    </div>
+
+    <div class="section_content">
+        <header class="section_header"> 
+            <h1 class="title">{title}</h1>
+            <p>{subtitle}</p>
+        </header>
+    </div>
+</section>
+
+
+<style lang="sass">
+.hero_section
+    @apply flex flex-col gap-8 h-screen w-full text-center overflow-hidden font-sans
+    .section_content
+        @apply h-fit pl-20 pb-28
+        @apply flex flex-col text-start justify-end
+        .section_header
+            .title
+                @apply text-4xl mb-2
+            p
+
+    .section_bg_container
+        @apply h-full w-full z-10 overflow-hidden flex justify-center items-center
+        img
+            @apply object-contain h-full w-full
+
+</style>
+
